@@ -1,0 +1,12 @@
+---
+services:
+  spiderfoot:
+    volumes:
+      - ~/.spiderfoot-data:/var/lib/spiderfoot
+    image: chrizy/spiderfoot
+    container_name: SpiderFoot
+    environment:
+      - TZ=Europe/Warsaw
+    ports:
+      - "5001:5001"
+    restart: unless-stopped

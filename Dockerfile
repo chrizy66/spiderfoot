@@ -56,9 +56,10 @@ WORKDIR /home/spiderfoot
 ENV SPIDERFOOT_DATA=/var/lib/spiderfoot
 ENV SPIDERFOOT_LOGS=/var/lib/spiderfoot/log
 ENV SPIDERFOOT_CACHE=/var/lib/spiderfoot/cache
+ENV TZ=Europe/Warsaw
 
 # Run everything as one command so that only one layer is created
-RUN apk --update --no-cache add python3 musl openssl libxslt tinyxml libxml2 jpeg zlib openjpeg \
+RUN apk --update --no-cache add python3 musl openssl libxslt tinyxml libxml2 jpeg zlib openjpeg tzdata \
     && addgroup spiderfoot \
     && adduser -G spiderfoot -h /home/spiderfoot -s /sbin/nologin \
                -g "SpiderFoot User" -D spiderfoot \
