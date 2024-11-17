@@ -1,4 +1,4 @@
-version: "3"
+---
 
 # Basic usage:
 #     $ docker-compose up
@@ -18,15 +18,10 @@ version: "3"
 
 services:
   spiderfoot:
-    build:
-      context: ./
     volumes:
-      - spiderfoot-data:/var/lib/spiderfoot
-    image: spiderfoot
-    container_name: spiderfoot
+      - ~/.spiderfoot-data:/var/lib/spiderfoot
+    image: chrizy/spiderfoot
+    container_name: SpiderFoot
     ports:
       - "5001:5001"
     restart: unless-stopped
-
-volumes:
-  spiderfoot-data:
