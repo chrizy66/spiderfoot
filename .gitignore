@@ -4,8 +4,8 @@
 /log/
 /spiderfoot.db*
 passwd
-spiderfoot.crt
-spiderfoot.key
+!spiderfoot.crt
+!spiderfoot.key
 
 spiderfoot/static/node_modules/*
 
